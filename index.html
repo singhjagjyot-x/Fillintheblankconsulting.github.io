@@ -528,13 +528,18 @@ section { padding: 6rem 5vw; }
 .founder-card:hover { border-color: rgba(0,229,160,0.25); }
 
 .founder-avatar {
-  width: 60px; height: 60px;
+  width: 80px; height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0,229,160,0.25), rgba(108,99,255,0.25));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem;
+  overflow: hidden;
   margin-bottom: 1.2rem;
-  border: 2px solid var(--border);
+  border: 2px solid rgba(0,229,160,0.25);
+  background: var(--surface2);
+}
+
+.founder-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .founder-card h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
@@ -862,15 +867,19 @@ footer p { font-size: 0.8rem; color: var(--muted); }
 ```
 <div class="about-grid">
   <div class="founder-card reveal">
-    <div class="founder-avatar">👤</div>
-    <h3>Founder One</h3>
-    <div class="founder-title">Co-Founder & IT Strategist</div>
+    <div class="founder-avatar">
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/10/Eric_Cartman.png" alt="Juggy Singh placeholder"/>
+    </div>
+    <h3>Juggy Singh</h3>
+    <div class="founder-title">Co-Founder</div>
     <p>Add your bio here — your background, areas of expertise, industries you've worked in, and what drives your approach to consulting. Keep it human and honest.</p>
   </div>
   <div class="founder-card reveal">
-    <div class="founder-avatar">👤</div>
-    <h3>Founder Two</h3>
-    <div class="founder-title">Co-Founder & Technology Lead</div>
+    <div class="founder-avatar">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Kyle_Broflovski.png" alt="Mani Mahal placeholder"/>
+    </div>
+    <h3>Mani Mahal</h3>
+    <div class="founder-title">Co-Founder & CTO</div>
     <p>Add your co-founder's bio here — their technical background, specialties, and the kind of problems they love solving. Let clients see the person behind the work.</p>
   </div>
 </div>
