@@ -528,18 +528,20 @@ section { padding: 6rem 5vw; }
 .founder-card:hover { border-color: rgba(0,229,160,0.25); }
 
 .founder-avatar {
-  width: 80px; height: 80px;
+  width: 90px; height: 90px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.2rem;
-  border: 2px solid rgba(0,229,160,0.25);
+  border: 3px solid rgba(0,229,160,0.3);
   background: var(--surface2);
+  flex-shrink: 0;
 }
 
 .founder-avatar img {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
 }
 
 .founder-card h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
@@ -867,16 +869,79 @@ footer p { font-size: 0.8rem; color: var(--muted); }
 ```
 <div class="about-grid">
   <div class="founder-card reveal">
+    <!-- Replace SVG below with a real <img src="your-photo.jpg"> when ready -->
     <div class="founder-avatar">
-      <img src="https://static.wikia.nocookie.net/southpark/images/c/c4/Eric-cartman.png/revision/latest?cb=20180718082504" alt="Juggy Singh placeholder"/>
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="100" height="100" fill="#c8a86b"/>
+        <!-- Body / jacket (red) -->
+        <rect x="10" y="62" width="80" height="45" rx="8" fill="#cc2200"/>
+        <!-- Neck -->
+        <rect x="38" y="54" width="24" height="14" fill="#f5c98a"/>
+        <!-- Head -->
+        <ellipse cx="50" cy="44" rx="26" ry="26" fill="#f5c98a"/>
+        <!-- Beanie (red) -->
+        <ellipse cx="50" cy="22" rx="26" ry="10" fill="#cc2200"/>
+        <rect x="24" y="18" width="52" height="12" fill="#cc2200"/>
+        <!-- Beanie brim -->
+        <rect x="22" y="28" width="56" height="7" rx="3" fill="#aa1a00"/>
+        <!-- Eyes -->
+        <ellipse cx="40" cy="46" rx="5" ry="5.5" fill="white"/>
+        <ellipse cx="60" cy="46" rx="5" ry="5.5" fill="white"/>
+        <circle cx="41" cy="47" r="2.8" fill="#3a2000"/>
+        <circle cx="61" cy="47" r="2.8" fill="#3a2000"/>
+        <!-- Eyebrows -->
+        <path d="M35 39 Q40 36 45 39" stroke="#7a4a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M55 39 Q60 36 65 39" stroke="#7a4a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Nose -->
+        <ellipse cx="50" cy="52" rx="3" ry="2" fill="#e0a870"/>
+        <!-- Mouth (slight smirk) -->
+        <path d="M43 59 Q50 64 57 59" stroke="#c07040" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Cheeks -->
+        <circle cx="34" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+        <circle cx="66" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+      </svg>
     </div>
     <h3>Juggy Singh</h3>
-    <div class="founder-title">Co-Founder</div>
+    <div class="founder-title">Co-Founder & IT Strategist</div>
     <p>Add your bio here — your background, areas of expertise, industries you've worked in, and what drives your approach to consulting. Keep it human and honest.</p>
   </div>
   <div class="founder-card reveal">
+    <!-- Replace SVG below with a real <img src="your-photo.jpg"> when ready -->
     <div class="founder-avatar">
-      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Kyle_Broflovski.png" alt="Mani Mahal placeholder"/>
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="100" height="100" fill="#5a8a5a"/>
+        <!-- Body / jacket (green) -->
+        <rect x="10" y="62" width="80" height="45" rx="8" fill="#2a6a2a"/>
+        <!-- Neck -->
+        <rect x="38" y="54" width="24" height="14" fill="#f5c98a"/>
+        <!-- Head -->
+        <ellipse cx="50" cy="44" rx="26" ry="26" fill="#f5c98a"/>
+        <!-- Ushanka hat (green) -->
+        <ellipse cx="50" cy="21" rx="28" ry="11" fill="#2a6a2a"/>
+        <rect x="22" y="17" width="56" height="14" fill="#2a6a2a"/>
+        <!-- Hat ear flaps -->
+        <rect x="20" y="24" width="10" height="14" rx="4" fill="#2a6a2a"/>
+        <rect x="70" y="24" width="10" height="14" rx="4" fill="#2a6a2a"/>
+        <!-- Hat band -->
+        <rect x="22" y="29" width="56" height="6" rx="2" fill="#1a5a1a"/>
+        <!-- Eyes -->
+        <ellipse cx="40" cy="46" rx="5" ry="5.5" fill="white"/>
+        <ellipse cx="60" cy="46" rx="5" ry="5.5" fill="white"/>
+        <circle cx="41" cy="47" r="2.8" fill="#1a3a00"/>
+        <circle cx="61" cy="47" r="2.8" fill="#1a3a00"/>
+        <!-- Eyebrows -->
+        <path d="M35 39 Q40 36 45 39" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M55 39 Q60 36 65 39" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Nose -->
+        <ellipse cx="50" cy="52" rx="3" ry="2" fill="#e0a870"/>
+        <!-- Mouth -->
+        <path d="M43 59 Q50 63 57 59" stroke="#c07040" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Cheeks -->
+        <circle cx="34" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+        <circle cx="66" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+      </svg>
     </div>
     <h3>Mani Mahal</h3>
     <div class="founder-title">Co-Founder & CTO</div>
