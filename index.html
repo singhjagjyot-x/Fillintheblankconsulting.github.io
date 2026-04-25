@@ -373,8 +373,173 @@ section { padding: 6rem 5vw; }
 
 .service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
+/* SALESFORCE BADGE on service cards */
+.service-card.sf-card::before { background: #00a1e0; }
+.service-card.sf-card .service-icon {
+  background: rgba(0,161,224,0.08);
+  border-color: rgba(0,161,224,0.2);
+}
+.sf-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00a1e0;
+  background: rgba(0,161,224,0.08);
+  border: 1px solid rgba(0,161,224,0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  margin-bottom: 0.6rem;
+}
+
+/* SALESFORCE SPECIALIZATION CALLOUT */
+#sf-callout {
+  background: var(--bg);
+  padding: 5rem 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+#sf-callout::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(0,161,224,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.sf-callout-inner {
+  border: 1px solid rgba(0,161,224,0.2);
+  border-radius: 24px;
+  padding: 3rem;
+  background: rgba(0,161,224,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.sf-callout-inner::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,161,224,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.sf-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.sf-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,161,224,0.1);
+  border: 1px solid rgba(0,161,224,0.25);
+  color: #00a1e0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+}
+
+.sf-early-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(108,99,255,0.1);
+  border: 1px solid rgba(108,99,255,0.25);
+  color: #a09aff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+}
+
+.sf-callout-inner h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+.sf-callout-inner h2 span { color: #00a1e0; }
+
+.sf-callout-inner > p {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+}
+
+.sf-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.sf-pillar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem;
+  transition: border-color 0.25s;
+}
+
+.sf-pillar:hover { border-color: rgba(0,161,224,0.3); }
+
+.sf-pillar-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.sf-pillar h4 {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.sf-pillar p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+.sf-founding-strip {
+  background: linear-gradient(135deg, rgba(0,161,224,0.08), rgba(108,99,255,0.08));
+  border: 1px solid rgba(0,161,224,0.2);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sf-founding-strip h4 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.sf-founding-strip p { font-size: 0.85rem; color: var(--muted); max-width: 480px; line-height: 1.6; }
+
 /* AI EDGE */
-#ai-edge { background: var(--bg); position: relative; overflow: hidden; }
+#ai-edge { background: var(--surface); position: relative; overflow: hidden; }
 
 .ai-grid {
   display: grid;
@@ -713,8 +878,8 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   <section id="services">
     <div class="reveal">
       <span class="section-label">What We Do</span>
-      <h2 class="section-title">IT consulting built for the way business moves now.</h2>
-      <p class="section-sub">From infrastructure assessments to digital transformation, we bring clarity and execution to your toughest technology challenges.</p>
+      <h2 class="section-title">IT consulting & Salesforce expertise, built for how business moves now.</h2>
+      <p class="section-sub">From infrastructure assessments to Salesforce transformations, we bring clarity and execution to your toughest technology challenges.</p>
     </div>
 
 ```
@@ -748,6 +913,75 @@ footer p { font-size: 0.8rem; color: var(--muted); }
     <div class="service-icon">🛠️</div>
     <h3>Vendor & Tool Selection</h3>
     <p>Unbiased evaluation and selection of software, platforms, and vendors that actually fit your needs and team.</p>
+  </div>
+  <div class="service-card sf-card">
+    <div class="sf-tag">Salesforce</div>
+    <div class="service-icon">☁️</div>
+    <h3>Salesforce Architecture & Development</h3>
+    <p>We design Salesforce environments that scale with your business — not against it. From data model to API layer, built right the first time.</p>
+  </div>
+  <div class="service-card sf-card">
+    <div class="sf-tag">Salesforce</div>
+    <div class="service-icon">🧹</div>
+    <h3>Enterprise Org Cleanup</h3>
+    <p>Your Salesforce org grew fast. Now it's slowing you down. We untangle years of technical debt, misaligned architecture, and org sprawl — rebuilt around how your business works today.</p>
+  </div>
+  <div class="service-card sf-card">
+    <div class="sf-tag">Salesforce · Founding Rate</div>
+    <div class="service-icon">🌱</div>
+    <h3>Greenfield Implementation</h3>
+    <p>Starting fresh? We take the time to understand your business to the core before writing a single line of configuration — and offer our Founding Partner rate for new Salesforce builds.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- SALESFORCE SPECIALIZATION CALLOUT -->
+
+  <section id="sf-callout">
+    <div class="sf-callout-inner reveal">
+      <div class="sf-header">
+        <span class="sf-logo-badge">⚡ Salesforce Specialization</span>
+        <span class="sf-early-badge">🔬 Early Practitioners · Headless 360</span>
+      </div>
+
+```
+  <h2>We speak <span>Salesforce</span> fluently —<br/>including the parts most consultants haven't found yet.</h2>
+
+  <p>As Salesforce pushes further into API-first, headless architecture with Headless 360, most consultants are still catching up. We've been deep in the architecture — studying how Commerce Cloud, Experience Cloud, and core Salesforce APIs unify into a single, channel-agnostic platform. When your business is ready to move, we already speak the language.</p>
+
+  <div class="sf-pillars">
+    <div class="sf-pillar">
+      <div class="sf-pillar-icon">🔗</div>
+      <h4>API-First by Default</h4>
+      <p>Every solution we design exposes clean APIs — so your front-end, mobile app, or any channel can consume Salesforce data without friction.</p>
+    </div>
+    <div class="sf-pillar">
+      <div class="sf-pillar-icon">🏛️</div>
+      <h4>Org Architecture That Scales</h4>
+      <p>We align your Salesforce data model, automation, and integrations to where your business is going — not just where it is today.</p>
+    </div>
+    <div class="sf-pillar">
+      <div class="sf-pillar-icon">🧹</div>
+      <h4>Org Debt Elimination</h4>
+      <p>Years of quick fixes and misaligned builds slow your team down. We audit, refactor, and rebuild with your business needs at the centre.</p>
+    </div>
+    <div class="sf-pillar">
+      <div class="sf-pillar-icon">🌐</div>
+      <h4>Headless 360 Readiness</h4>
+      <p>Decouple your front-end from Salesforce's native UI constraints. One org, infinite experience channels — web, mobile, kiosk, and beyond.</p>
+    </div>
+  </div>
+
+  <div class="sf-founding-strip">
+    <div>
+      <h4>🌱 Greenfield Founding Partner Rate</h4>
+      <p>Starting a Salesforce implementation from scratch? We offer a preferential rate for greenfield engagements — because getting the foundation right matters more to us than the day-one invoice. Let's build it properly together.</p>
+    </div>
+    <a href="#contact" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">Let's Talk</a>
   </div>
 </div>
 ```
@@ -871,7 +1105,36 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   <div class="founder-card reveal">
     <!-- Replace SVG below with a real <img src="your-photo.jpg"> when ready -->
     <div class="founder-avatar">
-      <img src="IMG_0040.webp" alt="Juggy Singh">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="100" height="100" fill="#c8a86b"/>
+        <!-- Body / jacket (red) -->
+        <rect x="10" y="62" width="80" height="45" rx="8" fill="#cc2200"/>
+        <!-- Neck -->
+        <rect x="38" y="54" width="24" height="14" fill="#f5c98a"/>
+        <!-- Head -->
+        <ellipse cx="50" cy="44" rx="26" ry="26" fill="#f5c98a"/>
+        <!-- Beanie (red) -->
+        <ellipse cx="50" cy="22" rx="26" ry="10" fill="#cc2200"/>
+        <rect x="24" y="18" width="52" height="12" fill="#cc2200"/>
+        <!-- Beanie brim -->
+        <rect x="22" y="28" width="56" height="7" rx="3" fill="#aa1a00"/>
+        <!-- Eyes -->
+        <ellipse cx="40" cy="46" rx="5" ry="5.5" fill="white"/>
+        <ellipse cx="60" cy="46" rx="5" ry="5.5" fill="white"/>
+        <circle cx="41" cy="47" r="2.8" fill="#3a2000"/>
+        <circle cx="61" cy="47" r="2.8" fill="#3a2000"/>
+        <!-- Eyebrows -->
+        <path d="M35 39 Q40 36 45 39" stroke="#7a4a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M55 39 Q60 36 65 39" stroke="#7a4a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Nose -->
+        <ellipse cx="50" cy="52" rx="3" ry="2" fill="#e0a870"/>
+        <!-- Mouth (slight smirk) -->
+        <path d="M43 59 Q50 64 57 59" stroke="#c07040" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Cheeks -->
+        <circle cx="34" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+        <circle cx="66" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+      </svg>
     </div>
     <h3>Juggy Singh</h3>
     <div class="founder-title">Co-Founder & IT Strategist</div>
@@ -880,7 +1143,39 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   <div class="founder-card reveal">
     <!-- Replace SVG below with a real <img src="your-photo.jpg"> when ready -->
     <div class="founder-avatar">
-        <img src="IMG_0041.webp" alt="Mani Mahal">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="100" height="100" fill="#5a8a5a"/>
+        <!-- Body / jacket (green) -->
+        <rect x="10" y="62" width="80" height="45" rx="8" fill="#2a6a2a"/>
+        <!-- Neck -->
+        <rect x="38" y="54" width="24" height="14" fill="#f5c98a"/>
+        <!-- Head -->
+        <ellipse cx="50" cy="44" rx="26" ry="26" fill="#f5c98a"/>
+        <!-- Ushanka hat (green) -->
+        <ellipse cx="50" cy="21" rx="28" ry="11" fill="#2a6a2a"/>
+        <rect x="22" y="17" width="56" height="14" fill="#2a6a2a"/>
+        <!-- Hat ear flaps -->
+        <rect x="20" y="24" width="10" height="14" rx="4" fill="#2a6a2a"/>
+        <rect x="70" y="24" width="10" height="14" rx="4" fill="#2a6a2a"/>
+        <!-- Hat band -->
+        <rect x="22" y="29" width="56" height="6" rx="2" fill="#1a5a1a"/>
+        <!-- Eyes -->
+        <ellipse cx="40" cy="46" rx="5" ry="5.5" fill="white"/>
+        <ellipse cx="60" cy="46" rx="5" ry="5.5" fill="white"/>
+        <circle cx="41" cy="47" r="2.8" fill="#1a3a00"/>
+        <circle cx="61" cy="47" r="2.8" fill="#1a3a00"/>
+        <!-- Eyebrows -->
+        <path d="M35 39 Q40 36 45 39" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M55 39 Q60 36 65 39" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Nose -->
+        <ellipse cx="50" cy="52" rx="3" ry="2" fill="#e0a870"/>
+        <!-- Mouth -->
+        <path d="M43 59 Q50 63 57 59" stroke="#c07040" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Cheeks -->
+        <circle cx="34" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+        <circle cx="66" cy="54" r="5" fill="#f0a090" opacity="0.4"/>
+      </svg>
     </div>
     <h3>Mani Mahal</h3>
     <div class="founder-title">Co-Founder & CTO</div>
